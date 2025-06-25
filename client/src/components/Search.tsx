@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 
-export const searchForm = () => {
+export const SearchForm = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -30,11 +30,11 @@ export const searchForm = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for products, brands, or categories..."
-              className="w-full pl-12 pr-32 py-4 text-lg border-2 border-gray-200 rounded-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-lg"
+              className="w-full pl-12 pr-32 py-4 text-lg border-2 border-gray-200 rounded-3xl focus:border-amber-100 focus:outline-none focus:ring-2 focus:ring-orange-100 shadow-lg"
             />
             <button
               type="submit"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 rounded-full font-semibold transition-colors"
+              className="absolute border right-2 top-1/2 transform -translate-y-1/2  hover:bg-amber-500 hover:text-white hover:border-0  px-8 py-2 rounded-full transition-colors"
             >
               Search
             </button>
@@ -42,8 +42,7 @@ export const searchForm = () => {
         </form>
 
         {/* Popular Searches */}
-        <div className="mt-4">
-          <p className="text-sm text-gray-500 mb-2">Popular searches:</p>
+        <div className="mt-8">
           <div className="flex flex-wrap justify-center gap-2">
             {popularSearches.map((term) => (
               <button

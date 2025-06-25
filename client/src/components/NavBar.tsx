@@ -34,7 +34,7 @@ export default function NavBar() {
     <nav
       className={` px-6 py-1  ${
         isSticky
-          ? "fixed top-0 left-0 w-full  backdrop-blur-sm bg-white/30 shadow-md z-50 transition-all duration-300"
+          ? "fixed top-0 left-0 w-full  backdrop-blur-sm bg-amber-400/20 shadow-md z-50 transition-all duration-300"
           : "bg-transparent"
       }`}
     >
@@ -69,16 +69,24 @@ export default function NavBar() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden md:flex md:justify-center md:items-center md:gap-6">
-          <div className="flex justify-center items-center gap-1 ">
-            <UserRound size={20} />
-            <ChevronDown
-              size={15}
-              className="relative top-[2px] cursor-pointer"
-            />
+        {/* if not authenticate */}
+        {true ? (
+          <div className="flex gap-5 ">
+            <button className="px-3 py-1 border rounded-md">Sign in</button>
+            <button className="">Sign up</button>
           </div>
-          <ShoppingCart size={20} className="cursor-pointer" />
-        </div>
+        ) : (
+          <div className="hidden md:flex md:justify-center md:items-center md:gap-6">
+            <div className="flex justify-center items-center gap-1 ">
+              <UserRound size={20} />
+              <ChevronDown
+                size={15}
+                className="relative top-[2px] cursor-pointer"
+              />
+            </div>
+            <ShoppingCart size={20} className="cursor-pointer" />
+          </div>
+        )}
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">

@@ -4,7 +4,7 @@ export const Stars = () => {
   return (
     <>
       {/* Stats/Trust Indicators */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12  mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12  mx-auto max-w-5xl">
         <div className="text-center">
           <div className="flex items-center justify-center mb-2">
             <ShoppingBag className="w-6 h-6 text-blue-600 mr-2" />
