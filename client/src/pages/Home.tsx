@@ -5,6 +5,8 @@ import { SearchForm } from "../components/Search";
 import { Stars } from "../components/stars";
 import { FeaturedJuice } from "../components/FeaturedJuice";
 import { Catagories } from "../components/Cartagories";
+import { CallForAction } from "../components/CallToAction";
+import FrequentlyAskQuestion from "../components/FrequentlyAskQuestion";
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
         <img
           src={splash}
           alt="back_img"
-          className="w-full h-full object-cover blur-sm  opacity-60 "
+          className="w-full h-full object-cover blur-md  opacity-60 "
         />
       </div>
       <div className="container mx-auto px-4 space-y-3">
@@ -23,6 +25,8 @@ export default function Home() {
         <Stars />
         <FeaturedJuice />
         <Catagories />
+        <CallForAction />
+        <FrequentlyAskQuestion />
       </div>
     </div>
   );
