@@ -8,6 +8,32 @@ import { Catagories } from "../components/Cartagories";
 import { CallForAction } from "../components/CallToAction";
 import FrequentlyAskQuestion from "../components/FrequentlyAskQuestion";
 import Footer from "../components/Footer";
+import banner from "../image/banner2.png";
+
+export interface HeroProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  ctaText: string;
+  ctaLink: string;
+  secondaryCtaText: string;
+  secondaryCtaLink: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const defaultHeroData: HeroProps = {
+  title: "Naturally Colorful",
+  subtitle: "Juice for Kids",
+  description:
+    "Delicious, nutrient-rich concentrates made just for children — no added sugar, no preservatives, just vibrant fruit flavor in every drop. Perfect for schools, daycares, and families who care about quality and taste.",
+  ctaText: "Shop Now",
+  ctaLink: "/products",
+  secondaryCtaText: "Learn More",
+  secondaryCtaLink: "/about",
+  imageSrc: banner,
+  imageAlt: "Colorful juice bottles for kids",
+};
 
 export default function Home() {
   return (
@@ -21,7 +47,7 @@ export default function Home() {
       </div>
       <div className="container mx-auto px-4 space-y-3">
         <NavBar />
-        <Hero />
+        <Hero {...defaultHeroData} />
         <SearchForm />
         <Stars />
         <FeaturedJuice />

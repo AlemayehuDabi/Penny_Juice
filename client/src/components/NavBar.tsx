@@ -27,7 +27,7 @@ export default function NavBar() {
       const currentScrollPos = window.scrollY;
 
       // Sticky when scrolling down past 100px, hide when scrolling up
-      setIsSticky(currentScrollPos > 100 && currentScrollPos < prevScrollPos);
+      setIsSticky(currentScrollPos > 50 && currentScrollPos < prevScrollPos);
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -44,13 +44,13 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={` ${
         isSticky
-          ? "bg-amber-400/20 backdrop-blur-sm shadow-md"
+          ? "fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-amber-400/20 backdrop-blur-sm shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 font-sans">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
