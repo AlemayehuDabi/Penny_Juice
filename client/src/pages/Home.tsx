@@ -7,10 +7,11 @@ import { FeaturedJuice } from "../components/FeaturedJuice";
 import { Catagories } from "../components/Cartagories";
 import { CallForAction } from "../components/CallToAction";
 import FrequentlyAskQuestion from "../components/FrequentlyAskQuestion";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative px-4 mb-96 tracking-wide">
+    <div className="min-h-screen relative px-4 tracking-wide">
       <div className="absolute top-10 inset-x-0 -z-10">
         <img
           src={splash}
@@ -27,6 +28,7 @@ export default function Home() {
         <Catagories />
         <CallForAction />
         <FrequentlyAskQuestion />
+        <Footer />
       </div>
     </div>
   );
