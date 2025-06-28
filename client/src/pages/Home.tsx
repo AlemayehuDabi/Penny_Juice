@@ -9,6 +9,9 @@ import { CallForAction } from "../components/CallToAction";
 import FrequentlyAskQuestion from "../components/FrequentlyAskQuestion";
 import Footer from "../components/Footer";
 import banner from "../image/banner2.png";
+import { gsap } from "gsap/gsap-core";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export interface HeroProps {
   title: string;
@@ -35,26 +38,57 @@ const defaultHeroData: HeroProps = {
   imageAlt: "Colorful juice bottles for kids",
 };
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+  useGSAP(() => {
+    gsap.utils.toArray(".gsap-reveal").forEach((el) => {
+      gsap.from(el as HTMLElement, {
+        opacity: 0,
+        y: 100,
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el as HTMLElement,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+    });
+  }, []);
+
   return (
     <div className="min-h-screen relative px-4 tracking-wide">
       <div className="absolute top-10 inset-x-0 -z-10">
         <img
           src={splash}
           alt="back_img"
-          className="w-full h-full object-cover blur-md  opacity-60 "
+          className="w-full h-full object-cover blur-md opacity-60"
         />
       </div>
       <div className="container mx-auto px-4 space-y-3">
         <NavBar />
         <Hero {...defaultHeroData} />
         <SearchForm />
-        <Stars />
-        <FeaturedJuice />
-        <Catagories />
-        <CallForAction />
-        <FrequentlyAskQuestion />
-        <Footer />
+        <div className="gsap-reveal">
+          <Stars />
+        </div>
+        <div className="gsap-reveal">
+          <FeaturedJuice />
+        </div>
+        <div className="gsap-reveal">
+          <Catagories />
+        </div>
+        <div className="gsap-reveal">
+          <CallForAction />
+        </div>
+        <div className="gsap-reveal">
+          <FrequentlyAskQuestion />
+        </div>
+        <div className="gsap-reveal">
+          <Footer />
+        </div>
       </div>
     </div>
   );
