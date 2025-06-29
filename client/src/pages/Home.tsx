@@ -12,6 +12,7 @@ import banner from "../image/banner2.png";
 import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 export interface HeroProps {
   title: string;
@@ -58,6 +59,25 @@ export default function Home() {
     });
   }, []);
 
+  const navRef = useRef(null);
+
+  useGSAP(() => {
+    if (navRef.current) {
+      gsap.fromTo(
+        navRef.current,
+        {
+          y: 200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      );
+    }
+  }, []);
+
   return (
     <div className="min-h-screen relative px-4 tracking-wide">
       <div className="absolute top-10 inset-x-0 -z-10">
@@ -68,9 +88,13 @@ export default function Home() {
         />
       </div>
       <div className="container mx-auto px-4 space-y-3">
-        <NavBar />
+        <div ref={navRef}>
+          <NavBar />
+        </div>
         <Hero {...defaultHeroData} />
-        <SearchForm />
+        <div className="gsap-reveal">
+          <SearchForm />
+        </div>
         <div className="gsap-reveal">
           <Stars />
         </div>
