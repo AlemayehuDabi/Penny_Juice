@@ -88,9 +88,8 @@ export default function Home() {
         />
       </div>
       <div className="container mx-auto px-4 space-y-3">
-        <div ref={navRef}>
-          <NavBar />
-        </div>
+        <NavBar />
+
         <Hero {...defaultHeroData} />
         <div className="gsap-reveal">
           <SearchForm />

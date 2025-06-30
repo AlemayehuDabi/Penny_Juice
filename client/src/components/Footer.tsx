@@ -24,7 +24,7 @@ const contactInfo: FooterLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 mt-20">
+    <footer className=" py-12 px-4 sm:px-6 lg:px-8 mt-20 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div className="flex flex-col gap-4">
