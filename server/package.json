@@ -7,21 +7,26 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env nodemon src/index.ts",
+    "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "better-auth": "^1.2.12",
     "cors": "^2.8.5",
     "dotenv": "^17.0.0",
-    "express": "^5.1.0"
+    "drizzle-orm": "^0.44.2",
+    "express": "^5.1.0",
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.7",
+    "drizzle-kit": "^0.31.4",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }
